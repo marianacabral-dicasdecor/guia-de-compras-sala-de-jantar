@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Sala de Jantar: Guia de Compras por Mariana Cabral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #3D474D;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-brand-green { color: #6B8A83; }
+        .bg-brand-green { background-color: #6B8A83; }
+        .hover\:bg-brand-green-dark:hover { background-color: #5a756f; }
+        .text-brand-gold { color: #B89B72; }
+        .cta-button {
+            display: inline-block;
+            background-color: #6B8A83;
+            color: #FFFFFF;
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .cta-button:hover {
+            background-color: #5a756f;
+            transform: translateY(-2px);
+        }
+        .section-padding {
+            padding: 4rem 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1088374135429786');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1088374135429786&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Script de Rastreamento Assiny -->
+    <script>
+    (function(){
+      var DEBUG=false;
+      function log(){ if(DEBUG) try{console.log.apply(console, ['[assiny-utm]'].concat([].slice.call(arguments)));}catch(e){} }
+    
+      function paramsFromLocation(){
+        return new URLSearchParams(window.location.search || '');
+      }
+    
+      function hasParams(p){ try{ return Array.from(p.keys()).length>0; }catch(e){ return false; } }
+    
+      function shouldSkip(el, url){
+        if(!url) return true;
+        if(el && el.hasAttribute && el.hasAttribute('data-no-utm')) return true;
+        var proto = url.protocol;
+        if(proto==='mailto:' || proto==='tel:' || proto==='javascript:') return true;
+        var host = (url.host||'').toLowerCase();
+        if(host==='wa.me' || host==='api.whatsapp.com') return true;
+        return false;
+      }
+    
+      function mergeParams(url, srcParams){
+        try{
+          srcParams.forEach(function(v,k){ if(!url.searchParams.has(k)) url.searchParams.set(k,v); });
+        }catch(e){}
+      }
+    
+      function rewriteNode(node, srcParams){
+        try{
+          if(!node || !srcParams) return;
+          if(node.tagName==='A' && node.href){
+            var u=new URL(node.href, window.location.href);
+            if(shouldSkip(node,u)) return;
+            mergeParams(u, srcParams);
+            node.href=u.toString();
+            log('link updated', node.href);
+          } else if(node.tagName==='FORM' && node.action){
+            var u=new URL(node.action, window.location.href);
+            if(shouldSkip(node,u)) return;
+            mergeParams(u, srcParams);
+            node.action=u.toString();
+            log('form action updated', node.action);
+          } else if(node.getAttribute && node.hasAttribute('data-href')){
+            var raw=node.getAttribute('data-href');
+            var u=new URL(raw, window.location.href);
+            if(shouldSkip(node,u)) return;
+            mergeParams(u, srcParams);
+            node.setAttribute('data-href', u.toString());
+            if(!node.hasAttribute('href')) node.setAttribute('href', u.toString());
+            log('data-href updated', node.getAttribute('data-href'));
+          }
+        }catch(e){}
+      }
+    
+      function rewriteAll(){
+        var p=paramsFromLocation();
+        if(!hasParams(p)) return;
+        document.querySelectorAll('a, form, [data-href]').forEach(function(el){ rewriteNode(el,p); });
+      }
+    
+      function onClickCapture(ev){
+        try{
+          var p=paramsFromLocation();
+          if(!hasParams(p)) return;
+          var el = ev.target && ev.target.closest ? ev.target.closest('a,[data-href]') : null;
+          if(!el) return;
+          rewriteNode(el, p);
+        }catch(e){}
+      }
+    
+      function hookSpa(){
+        ['pushState','replaceState'].forEach(function(fn){
+          var _=history[fn];
+          history[fn]=function(){
+            var ret=_.apply(this, arguments);
+            try{ rewriteAll(); }catch(e){}
+            return ret;
+          };
+        });
+        window.addEventListener('popstate', function(){ try{ rewriteAll(); }catch(e){} });
+      }
+    
+      var observer=null;
+      function observeDom(){
+        try{
+          observer = new MutationObserver(function(muts){
+            var p=paramsFromLocation();
+            if(!hasParams(p)) return;
+            muts.forEach(function(m){
+              m.addedNodes && m.addedNodes.forEach(function(n){
+                rewriteNode(n, p);
+                if(n.querySelectorAll){
+                  n.querySelectorAll('a, form, [data-href]').forEach(function(el){ rewriteNode(el, p); });
+                }
+              });
+            });
+          });
+          observer.observe(document.documentElement, {childList:true, subtree:true});
+        }catch(e){}
+      }
+    
+      document.addEventListener('DOMContentLoaded', function(){
+        try{
+          rewriteAll();
+          observeDom();
+          hookSpa();
+          document.addEventListener('click', onClickCapture, true);
+          console.log('Assiny tracker: UTM propagation initialized');
+        }catch(e){}
+      });
+    })();
+    </script>
+    
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="text-center section-padding">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">Transforme sua sala de jantar em um ambiente elegante, aconchegante e cheio de estilo, sem gastar tempo com más escolhas.</h1>
+            <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto">Com o <strong class="text-brand-gold">Guia de Compras – Sua Sala de Jantar</strong>, você tem acesso a uma curadoria exclusiva da arquiteta <strong class="text-brand-gold">Mariana Cabral</strong>, com links diretos para os melhores móveis e peças de decoração.</p>
+            <div class="mt-10">
+                <img src="images/mockup1.png" alt="Mockup do Guia de Compras Sua Sala de Jantar" class="mx-auto w-full max-w-lg rounded-lg">
+            </div>
+            <div class="mt-12 bg-white/60 p-8 rounded-xl shadow-lg max-w-lg mx-auto">
+                <p class="text-xl">OFERTA ESPECIAL DE LANÇAMENTO</p>
+                <p class="text-5xl font-bold my-4">
+                    <span class="text-2xl font-normal line-through text-gray-500 mr-2">De R$97,00</span>
+                    <span class="text-brand-green">por apenas R$47,00</span>
+                </p>
+                <a href="https://pay.assiny.com.br/2f618d/node/r9tDVv" class="cta-button mt-4">
+                    👉 Quero meu Guia agora!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema Section -->
+    <section class="bg-gray-50 section-padding">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Montar a sala de jantar dos sonhos pode ser um pesadelo:</h2>
+            <div class="mt-8 text-left grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-lg">São centenas de opções de mesas e cadeiras.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-lg">O medo de errar na proporção e estragar a harmonia.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-lg">A indecisão que faz perder tempo (e dinheiro).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Solução Section -->
+    <section class="section-padding">
+        <div class="max-w-4xl mx-auto text-center">
+             <img src="images/mockup2.png" alt="Páginas do guia de compras em um tablet" class="mx-auto w-full max-w-2xl rounded-lg mb-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-brand-green">O caminho mais fácil para sua sala de jantar perfeita.</h2>
+            <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto">Mariana Cabral já fez o trabalho por você: selecionou móveis e itens de decoração que realmente funcionam juntos, com links prontos para compra. Basta escolher o que mais combina com o seu estilo e orçamento.</p>
+        </div>
+    </section>
+
+    <!-- O que você vai encontrar no Guia -->
+    <section class="bg-gray-50 section-padding">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">O que você vai encontrar no Guia</h2>
+            <ul class="mt-10 grid sm:grid-cols-2 gap-x-12 gap-y-6 text-lg">
+                <li class="flex items-start">
+                    <span class="text-brand-green text-2xl mr-3">✔️</span>
+                    <span>Mesas de jantar em diversos estilos e tamanhos</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-green text-2xl mr-3">✔️</span>
+                    <span>Cadeiras confortáveis e elegantes</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-green text-2xl mr-3">✔️</span>
+                    <span>Aparadores e buffets que completam o ambiente</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-green text-2xl mr-3">✔️</span>
+                    <span>Peças de decoração selecionadas</span>
+                </li>
+                <li class="flex items-start col-span-1 sm:col-span-2 justify-center">
+                    <span class="text-brand-green text-2xl mr-3">✔️</span>
+                    <span>Dicas práticas de proporção e harmonia</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Benefícios Section -->
+    <section class="section-padding">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">Benefícios</h2>
+            <div class="mt-10 grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl text-brand-gold">Economia de tempo</h3>
+                    <p class="mt-2">Nada de passar horas pesquisando.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl text-brand-gold">Segurança nas compras</h3>
+                    <p class="mt-2">Só opções testadas e aprovadas.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl text-brand-gold">Estilo garantido</h3>
+                    <p class="mt-2">Combinações que refletem sua personalidade.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl text-brand-gold">Curadoria profissional</h3>
+                    <p class="mt-2">Direto da arquiteta Mariana Cabral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem é Mariana Cabral Section -->
+    <section class="bg-gray-50 section-padding">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div class="md:w-1/3 text-center">
+                <img src="https://unavatar.io/youtube/DicasDecor" alt="Foto da arquiteta Mariana Cabral" class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-xl">
+            </div>
+            <div class="md:w-2/3">
+                <h2 class="text-3xl md:text-4xl font-bold">Quem é Mariana Cabral</h2>
+                <p class="mt-4 text-lg">Arquiteta e criadora do canal <strong>Dicas Decor</strong> no YouTube, com milhares de seguidores apaixonados por transformar seus lares de forma prática, elegante e acessível. Mariana já ajudou milhares de pessoas a criarem ambientes que unem beleza e funcionalidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta Section -->
+    <section class="section-padding text-center bg-brand-green text-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold">Tenha acesso a uma curadoria profissional por um preço simbólico</h2>
+            <p class="mt-4 text-lg">Consultorias de decoração podem custar milhares de reais. Mas hoje, você pode ter sua sala de jantar transformada por apenas:</p>
+            <div class="mt-8 bg-white/90 p-8 rounded-xl shadow-lg max-w-lg mx-auto text-gray-800">
+                <p class="text-5xl font-bold my-4">
+                    <span class="text-2xl font-normal line-through text-gray-500 mr-2">De R$97,00</span>
+                    <span class="text-brand-green">por R$47,00</span> ✨
+                </p>
+                 <a href="https://pay.assiny.com.br/2f618d/node/r9tDVv" class="cta-button mt-4">
+                    👉 Quero meu Guia agora!
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Garantia Section -->
+    <section class="section-padding">
+        <div class="max-w-2xl mx-auto text-center flex flex-col sm:flex-row items-center gap-6">
+            <svg class="w-20 h-20 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.944a11.955 11.955 0 0118-8.944c0 2.452.285 4.814.832 7.016z"></path></svg>
+            <div>
+                <h3 class="text-2xl font-bold">Garantia Incondicional</h3>
+                <p class="mt-2 text-lg">Se você não encontrar valor no guia, pode solicitar reembolso em até <strong>7 dias</strong>. Risco zero para você.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 section-padding">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">Perguntas Frequentes</h2>
+            <div class="mt-10 space-y-6">
+                <div>
+                    <h3 class="font-bold text-xl">Como recebo o guia?</h3>
+                    <p class="mt-2 text-lg">Você receberá por e-mail em formato PDF, com acesso imediato após a confirmação do pagamento.</p>
+                </div>
+                <hr>
+                <div>
+                    <h3 class="font-bold text-xl">Preciso de cartão de crédito?</h3>
+                    <p class="mt-2 text-lg">Não. Você pode pagar com segurança via cartão de crédito ou Pix.</p>
+                </div>
+                <hr>
+                <div>
+                    <h3 class="font-bold text-xl">Os links expiram?</h3>
+                    <p class="mt-2 text-lg">O guia é atualizado periodicamente para manter as opções sempre disponíveis e relevantes para você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Último CTA -->
+     <section class="section-padding text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold">Chega de indecisão e más compras. Sua sala de jantar dos sonhos começa agora.</h2>
+             <div class="mt-10">
+                 <a href="https://pay.assiny.com.br/2f618d/node/r9tDVv" class="cta-button text-xl">
+                    👉 Quero meu Guia agora!
+                </a>
+             </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="text-center p-8 bg-gray-100">
+        <p>&copy; 2025 Mariana Cabral - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
